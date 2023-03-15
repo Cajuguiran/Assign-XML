@@ -10,9 +10,9 @@
     <h2>My Movies Collection:</h2>
 
     <button type="button" onclick="loadXMLDoc()">
-    Get my Movies collection</button>
+    Movies Collection</button>
     
-    <table id="demo" border="1" cellspacing="0" cellpadding="10" width="80%" align="center"">
+    <table id="demo" border="1" cellspacing="0" cellpadding="10" width="80%" align="center">
     </table>
     
     <script>
@@ -36,31 +36,31 @@
             txt = `
                 <tr>
                     <th>TITLE</th>
-                    <th>STUDIO</th>
-                    <th>COUNTRY</th>
-                    <th>CAST</th>
+                    <th>DURATION</th>
                     <th>DIRECTOR</th>
+                    <th>ARTIST</th>
+                    <th>COUNTRY</th>
                     <th>YEAR</th>
                     <th>GENRE</th>
                 </tr>
             `;
 
-            var title = xmlDoc.getElementsByTagName("TITLE");
-            var studio = xmlDoc.getElementsByTagName("STUDIO");
-            var country = xmlDoc.getElementsByTagName("COUNTRY");
-            var cast = xmlDoc.getElementsByTagName("CAST");
-            var director = xmlDoc.getElementsByTagName("DIRECTOR");
-            var year = xmlDoc.getElementsByTagName("YEAR");
-            var genre = xmlDoc.getElementsByTagName("GENRE");
+            var title = xmlDoc.getElementsByTagName("title");
+            var duration = xmlDoc.getElementsByTagName("duration");
+            var director = xmlDoc.getElementsByTagName("director");
+            var artist = xmlDoc.getElementsByTagName("artist");
+            var country = xmlDoc.getElementsByTagName("country");
+            var year = xmlDoc.getElementsByTagName("year");
+            var genre = xmlDoc.getElementsByTagName("genre");
 
             for (i = 0; i< title.length; i++) {
                 txt += `
                     <tr>
                         <td>${title[i].childNodes[0].nodeValue}</td>
-                        <td>${studio[i].childNodes[0].nodeValue}</td>
-                        <td>${country[i].childNodes[0].nodeValue}</td>
-                        <td>${cast[i].childNodes[0].nodeValue}</td>
+                        <td>${duration[i].childNodes[0].nodeValue}</td>
                         <td>${director[i].childNodes[0].nodeValue}</td>
+                        <td>${artist[i].childNodes[0].nodeValue}</td>
+                        <td>${country[i].childNodes[0].nodeValue}</td>
                         <td>${year[i].childNodes[0].nodeValue}</td>
                         <td>${genre[i].childNodes[0].nodeValue}</td>
                     </tr>
